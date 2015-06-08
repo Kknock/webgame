@@ -106,36 +106,7 @@
 				
 				
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+							
 				
 				
 				<div class="navbar-default sidebar" role="navigation">
@@ -169,7 +140,7 @@
 										<a href="#oldUsers">회원 목록</a>
 									</li>
 									<li>
-										<a href="#user">신규 회원</a>
+										<a href="#newUsers">신규 회원</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->
