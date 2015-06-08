@@ -70,6 +70,8 @@ function hashChange(caller) {
 				$.getScript("../bower_components/morrisjs/morris.min.js");
 				$.getScript("../dist/js/morris-data.js");
 				break;
+			case "newUsers":
+		    	$.getScript("../dist/js/contextHandler.js");
 			case "oldUsers":
 				
 				//<!-- DataTables JavaScript -->
@@ -78,8 +80,7 @@ function hashChange(caller) {
 				// Page-Level Demo Scripts - Tables - Use for reference
 				$('#dataTables-example').DataTable({
 							responsive: true
-					});
-
+				});
 				break;
 			default:
 				break;

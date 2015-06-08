@@ -9,7 +9,7 @@
 		</p> </p>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Problem database
+				회원 목록
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">

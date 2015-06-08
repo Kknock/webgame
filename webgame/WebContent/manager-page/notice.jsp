@@ -97,11 +97,10 @@
 			
 		}).fail(function() {
 			alert("죄송합니다 서버로의 연결에 실패하였습니다.");
-			alert(status);
 			return false;
 		});
 	
-	return false;
+		return false;
 		
 	}
 
