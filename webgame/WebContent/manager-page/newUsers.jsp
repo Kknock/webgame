@@ -64,13 +64,11 @@
 
 <script>
 
-	$(function(){
-		
+	function init() {
 		$.getJSON('../getJoinRequest.jsp', function(data, status) {
-			
 			/*
-				서버로부터 유저 데이터를 가져와 dataSet을 작성한다.
-				가져오는 값은 다음과 같다. 회원번호, 아이디, 이름, 해결한 문제 수, 마지막 인증 시간.
+			 *	서버로부터 유저 데이터를 가져와 dataSet을 작성한다.
+			*	가져오는 값은 다음과 같다. 회원번호, 아이디, 이름, 해결한 문제 수, 마지막 인증 시간.
 			*/
 			dataSet = []; 
 			for( idx in data.joinList ) {
@@ -81,9 +79,9 @@
 			}			
 			
 			/*
-				dataSet을 이용해 DataTable을 작성한다.
-				"data" 속성의 값은 [ [td, td, td, ...], [td, td, td, ...], ... ] 형식이다. 
-				"columns" 속성에서는 thead 값과, 그 속성을 결정한다.
+			 *	dataSet을 이용해 DataTable을 작성한다.
+			 *	"data" 속성의 값은 [ [td, td, td, ...], [td, td, td, ...], ... ] 형식이다. 
+			*	"columns" 속성에서는 thead 값과, 그 속성을 결정한다.
 			*/
 			$('#dataTable').dataTable( {
 		        "data": dataSet,
@@ -105,10 +103,7 @@
 			console.error("getJSON failed, status: " + status + ", error: "+error)
 			alert('서버와의 연결에 실패하였습니다.');
 		});
-		
-		
-
-	})
+	}
 	
 	function contextCallback(no, action) {
 			if(action == "Accept") {

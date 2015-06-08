@@ -1,6 +1,5 @@
 $(function(){
 
-	$(document).ready(init);
 	$(window).on('hashchange', function() {
 		hashChange();
 		// on 메소드의 두번째 인자로 함수명 전달시 
@@ -17,33 +16,6 @@ $(function(){
 	});
 	
 })
-
-function init() {
-
-//  Initialize management menu
-
-
-	/*
-	$('#notice').empty().load("manager_page/notice_manage.html");
-	$('#prob').empty().load("manager_page/problem_manage.html");
-	$('#user').empty().load("manager_page/user_manage.html", function() {
-
-		$.getScript("contextHandler.js").fail(function(jqxhr, settings, exception) {
-			console.log(jqxhr, settings, exception);
-		});
-		
-	});
-	$('#hall').empty().load("hall_manage.html");
-	*/
-	
-	/*document.getElementById("btn-notice").addEventListener("click", function(e) {
-		alert(0);
-	}, false);
-
-	*/
- 
- 
-}
 
 function hashChange(caller) {
 	
@@ -62,6 +34,12 @@ function hashChange(caller) {
 
 	$('#page-wrapper').empty().load(tag + ".jsp", function() {
 		
+		
+		// Load된 페이지의 init 함수를 호출한다.
+		if(typeof(window["init"]) == "function"){
+			init();
+	    }
+		
 		// JAVA 7 이전버전에선 문자열에 대한 switch - case를 지원하지 않기에 동작하지 않는다.
 		switch(tag) {
 			case "dashboard":
@@ -71,6 +49,7 @@ function hashChange(caller) {
 				$.getScript("../dist/js/morris-data.js");
 				break;
 			case "newUsers":
+				
 		    	$.getScript("../dist/js/contextHandler.js");
 			case "oldUsers":
 				

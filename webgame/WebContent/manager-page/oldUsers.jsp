@@ -48,7 +48,7 @@
 
 <script>
 
-	$(function(){
+	function init(){
 		
 		$.getJSON('../getUserList.jsp', function(data, status) {
 			
@@ -91,6 +91,6 @@
 			alert('서버와의 연결에 실패하였습니다.');
 		});	
 		
-	})
+	}
 
 </script>
