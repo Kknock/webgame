@@ -124,7 +124,7 @@
 							</li>
 
 							<li>
-								<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 문제 관리<span class="fa arrow"></span></a>
+								<a href="#"><i class="fa fa-list-ul fa-fw"></i> 문제 관리<span class="fa arrow"></span></a>
 								<ul class="nav nav-second-level">
 									<li>
 										<a href="#problem">목록 보기</a>
@@ -137,7 +137,7 @@
 							</li>
 							
 							<li>
-								<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 회원 관리<span class="fa arrow"></span></a>
+								<a href="#"><i class="fa fa-user fa-fw"></i> 회원 관리<span class="fa arrow"></span></a>
 								<ul class="nav nav-second-level">
 									<li>
 										<a href="#oldUsers">회원 목록</a>
