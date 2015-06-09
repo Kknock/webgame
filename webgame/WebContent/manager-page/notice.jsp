@@ -39,7 +39,7 @@
 
 <script>
 
-	$(function(){
+	function init(){
 	
 		$.getJSON('../getNotice.jsp', function(data, status) {
 			
@@ -66,7 +66,7 @@
 		$(document).ready(function() {
 			$(".chat-panel .panel-body").animate({scrollTop: 0}, 100); //100ms for example
 		});
-	})
+	}
 	
 	function makeNoticeFormat(no, time, content) {
 		var format = '<li class="right clearfix">' + 
