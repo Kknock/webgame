@@ -102,7 +102,7 @@
 				
 				$("#timeline").append(
 						makeTimelineFormat(id, auth, result, time));
-			}			
+			}
 		
 			
 		}).fail(function(d, status, error) {

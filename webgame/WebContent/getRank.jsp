@@ -3,13 +3,12 @@
 <%@ page import="org.json.simple.*"%>
 <%@ include file="common.jsp" %>
 <%!
-	String SQL 		= "SELECT name, score FROM member order by score desc limit 50";
+	String SQL 		= "SELECT name, score FROM member order by score desc limit 10";
 	
 	String FILE		= "getRank.jsp\t";
 	
 %>
 <%
-	
 	// Connect to database by jdbc
 	Connection con = null;
 	try {
