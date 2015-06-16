@@ -245,6 +245,12 @@ section.success a.active {
     margin-top: -12px;
 }
 
+#challenge .challenge-item .challenge-link .caption .caption-content  img {
+	position: absolute;
+	width: auto;
+	height: auto;
+}
+
 #challenge .challenge-item .challenge-link .caption .caption-content h3,
 #challenge .challenge-item .challenge-link .caption .caption-content h4 {
     margin: 0;
