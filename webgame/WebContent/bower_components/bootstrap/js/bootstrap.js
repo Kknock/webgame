@@ -908,13 +908,12 @@ if (typeof jQuery === 'undefined') {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
-
+var stack = 0;
 +function ($) {
   'use strict';
 
   // MODAL CLASS DEFINITION
   // ======================
-
   var Modal = function (element, options) {
     this.options             = options
     this.$body               = $(document.body)
@@ -963,7 +962,8 @@ if (typeof jQuery === 'undefined') {
     this.checkScrollbar()
     this.setScrollbar()
     this.$body.addClass('modal-open')
-
+    stack++;
+    
     this.escape()
     this.resize()
 
@@ -1073,7 +1073,10 @@ if (typeof jQuery === 'undefined') {
     var that = this
     this.$element.hide()
     this.backdrop(function () {
-      that.$body.removeClass('modal-open')
+      if( stack == 1 ) {
+    	  that.$body.removeClass('modal-open')
+      }
+      stack--;
       that.resetAdjustments()
       that.resetScrollbar()
       that.$element.trigger('hidden.bs.modal')
