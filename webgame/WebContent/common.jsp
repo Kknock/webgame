@@ -1,7 +1,7 @@
 <%!	
 	// Instance Variables
-	String jdbcURL	= "jdbc:mariadb://203.249.6.99:2014/test";
-	String dbID		= "kknock_wars";
+	String jdbcURL	= "jdbc:mysql://localhost:3306/test";
+	String dbID		= "root";
 	String dbPW		= "enpwlrhtlvsi??"; 
-	String dbDriver	= "org.mariadb.jdbc.Driver";
+	String dbDriver	= "com.mysql.jdbc.Driver";
 %>
