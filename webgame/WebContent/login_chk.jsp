@@ -52,8 +52,12 @@
 		while(rs.next())
 			chk = chk+1;
 		
-		if(chk>0) 
+		if(chk>0){ 
+			//session.setAttribute("sessionId",id);
+			//session.setAttribute("sessionPw",pw);
+			//response.sendRedirect("index.jsp");
 			out.println("로그인 가능");
+		}
 		else
 			out.println("로그인 불가능");
 		

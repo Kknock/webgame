@@ -1,8 +1,7 @@
-<?php
-	session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html class="no-js" lang="ko">
 <head>
 
     <meta charset="utf-8">
@@ -101,11 +100,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>[15.06.07 23:22] 첫번째 공지다.</p>
-					<p>[15.06.08 01:18] 다시 확인해주세요.</p>
-					<p>[15.06.08 03:48] 네네네네네네네</p>
-					<p>[15.06.09 10:32] ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+                <div class="col-lg-4 col-lg-offset-2" style="overflow-x:hidden; overflow-y:scroll; width:70%; height:400px;" id="noticeBody">
                 </div>
             </div>
         </div>
@@ -728,6 +723,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/freelancer.js"></script>
     <script src="dist/js/getProblem.js"></script>
+    <script src="dist/js/getNotice.js"></script>
 
 </body>
 

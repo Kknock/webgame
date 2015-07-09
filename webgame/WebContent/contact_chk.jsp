@@ -30,14 +30,14 @@
 %>
 		<script>
 			alert("아이디를 입력해주세요.");
-			location.href="index.html";
+			location.href="index.jsp";
 		</script>	
 <%	}
 	else if(name.equals("")){
 %>
 		<script>
 			alert("닉네임을 입력해주세요");
-			location.href="index.html";
+			location.href="index.jsp";
 		</script>
 <%
 	}
@@ -45,7 +45,7 @@
 %>
 		<script>
 			alert("패스워드를 입력해주세요");
-			location.href="index.html";
+			location.href="index.jsp";
 		</script>
 <%
 	}
@@ -53,7 +53,7 @@
 %>
 		<script>
 			alert("패스워드를 입력해주세요");
-			location.href="index.html";
+			location.href="index.jsp";
 		</script>
 <%
 	}
@@ -84,14 +84,14 @@
 				<script>
 					alert("회원가입 완료");
 					//location.href="index.html";
-					location.href="index.html";
+					location.href="index.jsp";
 				</script>
 <%				}
 				else{
 %>
 				<script>
 					alert("입력한 두 패스워드가 일치하지 않습니다.");
-					location.href="index.html";
+					location.href="index.jsp";
 				</script>
 <%				}
 			}
@@ -99,7 +99,7 @@
 %>
 				<script>
 					alert("이미 존재하는 아이디 또는 닉네임 입니다.");
-					location.href="index.html";
+					location.href="index.jsp";
 				</script>
 <%			}
 		

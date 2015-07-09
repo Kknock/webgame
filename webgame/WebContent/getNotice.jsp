@@ -3,7 +3,7 @@
 <%@ page import="org.json.simple.*"%>
 <%@ include file="common.jsp" %>
 <%!
-	String SQL 		= "SELECT * FROM notice order by no desc";
+	String SQL 		= "SELECT * FROM notice order by no asc";
 	
 	String FILE		= "getNotice.jsp\t";
 	
@@ -28,7 +28,10 @@
 		JSONArray jArray = new JSONArray();
 		while( rs.next() ) {
 			JSONObject jObject = new JSONObject();
-			jObject.put("timestamp", rs.getTimestamp("save_time").toString());
+			//jObject.put("save_time", rs.getTimestamp("save_time").toString());
+			jObject.put("save_time", rs.getString("save_time"));
+			//System.out.println(rs.getString("save_time"));
+			//System.out.println(rs.getTimestamp("save_time").toString());
 			jObject.put("content", rs.getString("content"));
 			jArray.add(jObject);
 		}
