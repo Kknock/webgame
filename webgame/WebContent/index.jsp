@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	String sessionId = (String)session.getAttribute("sessionId");
+	String chk_admin = (String)session.getAttribute("chk_admin");
+
+	boolean isLogin = false;
+	boolean isAdmin = false;
+	
+	if( sessionId != null && !sessionId.equals("") ) {
+		isLogin = true;
+	}
+	if( chk_admin != null && chk_admin.equals("T") ) {
+		isAdmin = true;
+	}
+%>
 
 <html class="no-js" lang="ko">
 <head>
@@ -61,11 +75,24 @@
                     <li class="page-scroll">
                         <a href="#rank">rank</a>
                     </li>
+                    
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+	                    <% 
+	                    	if(isLogin) {
+	                    		if(isAdmin) out.println("<a href=\"manager-page/index.jsp\">Manage</a>");
+	                    		else 		out.println("");
+	                    	}
+	                    	else {
+	                    		out.println("<a href=\"#contact\">Contact</a>");
+	                    	}
+	                    %>
+                        
                     </li>
                     <li>
-                    	<a href="#login" data-toggle="modal">Login</a>
+                    <% 
+                    	if(isLogin) out.println("<a href=\"logout.jsp\">Logout</a>");
+                    	else		out.println("<a href=\"#login\" data-toggle=\"modal\">Login</a>");
+                    %>
                     </li>
                 </ul>
             </div>
@@ -196,7 +223,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" <%if(isLogin){out.print("style=display:none");}%>>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
