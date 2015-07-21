@@ -1,4 +1,4 @@
-$('.prob').click(function(e){
+$(document).on("click",".prob",function(){
 	
 	var requestData = {no:$(this).attr('probNum')};
 	var title = "";

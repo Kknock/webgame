@@ -66,6 +66,12 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <li>
+                    <%
+                    if( sessionId != null && !sessionId.equals("") )
+                    	out.println(sessionId+"쨔응 환영한다능");
+                    %>
+                    </li>
 					<li class="page-scroll">
                         <a href="#notice">notice</a>
                     </li>
@@ -75,7 +81,6 @@
                     <li class="page-scroll">
                         <a href="#rank">rank</a>
                     </li>
-                    
                     <li class="page-scroll">
 	                    <% 
 	                    	if(isLogin) {
@@ -106,7 +111,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="dist/img/profile.png" alt="">
+                    <img src="dist/img/profile.png" alt="">
                     <div class="intro-text">
                         <span class="name">SURVIVAL GAME</span>
                         <hr class="star-light">
@@ -144,63 +149,63 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 challenge-item">
-                    <a href="#challengeModal1" class="challenge-link" data-toggle="modal">
-                        <div class="caption">
+                    <a href="#challengeModal" class="challenge-link" data-toggle="modal">
+                        <div class="caption" probtype="system">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/cabin.png" class="img-responsive" alt="">
+                        <img src="dist/img/challenge/system.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 challenge-item">
-                    <a href="#challengeModal2" class="challenge-link" data-toggle="modal">
-                        <div class="caption">
+                    <a href="#challengeModal" class="challenge-link" data-toggle="modal">
+                        <div class="caption" probtype="web">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/cake.png" class="img-responsive" alt="">
+                        <img src="dist/img/challenge/web.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 challenge-item">
-                    <a href="#challengeModal3" class="challenge-link" data-toggle="modal">
-                        <div class="caption">
+                    <a href="#challengeModal" class="challenge-link" data-toggle="modal">
+                        <div class="caption" probtype="reversing">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/circus.png" class="img-responsive" alt="">
+                        <img src="dist/img/challenge/reversing.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 challenge-item">
-                    <a href="#challengeModal4" class="challenge-link" data-toggle="modal">
-                        <div class="caption">
+                    <a href="#challengeModal" class="challenge-link" data-toggle="modal">
+                        <div class="caption" probtype="forensic">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/game.png" class="img-responsive" alt="">
+                        <img src="dist/img/challenge/forensic.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 challenge-item">
-                    <a href="#challengeModal5" class="challenge-link" data-toggle="modal">
-                        <div class="caption">
+                    <a href="#challengeModal" class="challenge-link" data-toggle="modal">
+                        <div class="caption" probtype="network">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/safe.png" class="img-responsive" alt="">
+                        <img src="dist/img/challenge/network.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 challenge-item">
-                    <a href="#challengeModal6" class="challenge-link" data-toggle="modal">
-                        <div class="caption">
+                    <a href="#challengeModal" class="challenge-link" data-toggle="modal">
+                        <div class="caption" probtype="etc">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/submarine.png" class="img-responsive" alt="">
+                        <img src="dist/img/challenge/etc.png" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -330,7 +335,7 @@
     </div>
 
     <!-- challenge Modals -->
-	<div class="challenge-modal modal fade" id="challengeModal1" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="challenge-modal modal fade" id="challengeModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -342,327 +347,17 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<h2>System</h2>
-								<hr class="star-primary">
-								<div class="row">
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/100.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="2"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/200.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="3"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/300.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="4"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/400.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="5"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/500.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="6"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/600.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="7"/> 
-										</a>
-									</div>
-								</div>
-								<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+							<div class="modal-body" id="challenge-list">
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			</div>
 		</div>
+	</div>
     
-    <div class="challenge-modal modal fade" id="challengeModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-			<section id="challenge">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<h2>Web</h2>
-								<hr class="star-primary">
-								<div class="row">
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/100.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="8"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/200.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="9"/>  
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/300.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="10"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/400.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="11"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/500.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="12"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/600.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="13"/> 
-										</a>
-									</div>
-								</div>
-								<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-    </div>
-    <div class="challenge-modal modal fade" id="challengeModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-			<section id="challenge">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<h2>Reversing</h2>
-								<hr class="star-primary">
-								<div class="row">
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/100.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="14"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/200.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="15"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/300.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="16"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/400.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="17"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/500.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="18"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/600.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="19"/> 
-										</a>
-									</div>
-								</div>
-								<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-    </div>
-    <div class="challenge-modal modal fade" id="challengeModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-			<section id="challenge">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<h2>Forensic</h2>
-								<hr class="star-primary">
-								<div class="row">
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/100.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="20"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/200.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="21"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/300.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="22"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/400.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="23"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/500.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="24"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/600.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="25"/> 
-										</a>
-									</div>
-								</div>
-								<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-    </div>
-    <div class="challenge-modal modal fade" id="challengeModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-			<section id="challenge">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<h2>Network</h2>
-								<hr class="star-primary">
-								<div class="row">
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/100.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="26"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/200.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="27"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/300.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="28"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/400.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="29"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/500.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="30"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/600.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="31"/> 
-										</a>
-									</div>
-								</div>
-								<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-    </div>
-    <div class="challenge-modal modal fade" id="challengeModal6" tabindex="-1" role="dialog" aria-hidden="true">
-       <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-			<section id="challenge">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<h2>ETC</h2>
-								<hr class="star-primary">
-								<div class="row">
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/100.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="32"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/200.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="33"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/300.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="34"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/400.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="35"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/500.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="36"/> 
-										</a>
-									</div>
-									<div class="col-sm-4 challenge-item">
-										<a href="#challengePage" class="challenge-link2" data-toggle="modal">
-											<img src="dist/img/system/system100.png" onmouseover="this.src='dist/img/600.png'" onmouseout="this.src='dist/img/system/system100.png'" class="prob" probNum="37"/> 
-										</a>
-									</div>
-								</div>
-								<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-    </div>
 
-	<!--challenge modals-->
+	<!--challenge page modals-->
     <div class="challenge-modal modal fade" id="challengePage" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -749,6 +444,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/freelancer.js"></script>
+    <script src="dist/js/getprobList.js"></script>
     <script src="dist/js/getProblem.js"></script>
     <script src="dist/js/getNotice.js"></script>
 

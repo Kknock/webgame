@@ -4,11 +4,11 @@
 <%@ include file="common.jsp" %>
 <%!
 	String SQL 		= "SELECT title, score, content FROM prob where no=?";
-	
 	String FILE		= "getProblem.jsp\t";
 	
 %>
 <%
+	
 	int no;
 	//getProblem.js 에서 보낸 문제 번호 받기
 	try {
