@@ -1,9 +1,10 @@
 $('.caption').click(function(e){
 		
-	var requestData = {prob_type:$(this).attr('probtype')};
+	var requestData = {prob_type:$(this).attr('probtype'),sessionId:$(this).attr('sessionId')};
 	var no = "";
 	var title = "";
 	var score = "";
+	var solve_chk = "";
 	var probtype = $(this).attr('probtype');
 	var format = "<h2>"+probtype+"</h2>"+
 				"<hr class=\"star-primary\">"+
@@ -15,11 +16,22 @@ $('.caption').click(function(e){
 			no = data.probList[idx].no;
 			title = data.probList[idx].title;
 			score = data.probList[idx].score;
+			solve_chk = data.probList[idx].solve_chk;
 			
-			format += "<div class=\"col-sm-4 challenge-item\">" +
-						"<a href=\"#challengePage\" class=\"challenge-link2\" data-toggle=\"modal\">" +
-						"<img src=\"dist/img/"+probtype+"/"+title+".png\" onmouseover=\"this.src=\'dist/img/"+score+".png\'\" onmouseout=\"this.src=\'dist/img/"+probtype+"/"+title+".png\'\" class=\"prob\" probNum=\""+no+"\"/> "+
-						"</a> </div>";
+			// 이미 푼 문제
+			if(solve_chk=="F"){
+				format += "<div class=\"col-sm-4 challenge-item\">" +
+				"<a class=\"challenge-link2\" data-toggle=\"modal\">"+
+				"<img src=\"dist/img/solved.png\"> "+
+				"</a> </div>";		
+			}
+			// 풀지 못한 문제
+			else{
+				format += "<div class=\"col-sm-4 challenge-item\">" +
+				"<a href=\"#challengePage\" class=\"challenge-link2\" data-toggle=\"modal\">" +
+				"<img src=\"dist/img/"+probtype+"/"+title+".png\" onmouseover=\"this.src=\'dist/img/"+score+".png\'\" onmouseout=\"this.src=\'dist/img/"+probtype+"/"+title+".png\'\" class=\"prob\" probNum=\""+no+"\"/> "+
+				"</a> </div>";
+			}
 		}
 		
 		format +="</div> <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><i class=\"fa fa-times\"></i> Close</button>";

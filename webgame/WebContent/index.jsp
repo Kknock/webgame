@@ -66,18 +66,12 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                    <%
-                    if( sessionId != null && !sessionId.equals("") )
-                    	out.println(sessionId+"쨔응 환영한다능");
-                    %>
-                    </li>
 					<li class="page-scroll">
                         <a href="#notice">notice</a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#challenge">challenge</a>
-                    </li>
+                    <%
+                    	if(isLogin) out.println("<li class=\"page-scroll\"> <a href=\"#challenge\">challenge</a> </li> ");
+                    %>
                     <li class="page-scroll">
                         <a href="#rank">rank</a>
                     </li>
@@ -138,19 +132,19 @@
         </div>
     </section>
 
-    <!-- challenge Grid Section -->
-    <section id="challenge">
+     <!-- challenge Grid Section -->
+    <section id="challenge" <%if(!isLogin){out.print("style=display:none");}%>>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>challenge</h2>
+                    <h2>challenge</h2> 
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="system">
+                        <div class="caption" probtype="system" sessionId=<%=(String)session.getAttribute("sessionId")%>>
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -185,7 +179,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/forensic.png" class="img-responsive" alt="">
+						<img src="dist/img/challenge/forensic.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 challenge-item">
@@ -205,13 +199,13 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="dist/img/challenge/etc.png" class="img-responsive" alt="">
+ 						<img src="dist/img/challenge/etc.png" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
         </div>
     </section>
-	
+    
 	<!--rank section-->
 	<section id="rank">
         <div class="container">
@@ -412,7 +406,6 @@
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <button type="submit" class="btn btn-success btn-lg">Send</button>
-                                <!--<input type="submit" value="submit" class="btn btn-success btn-lg">-->
                                 <button type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                             </div>
                         </div>

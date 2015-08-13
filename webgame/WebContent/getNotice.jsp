@@ -3,7 +3,7 @@
 <%@ page import="org.json.simple.*"%>
 <%@ include file="common.jsp" %>
 <%!
-	String SQL 		= "SELECT * FROM notice order by no asc";
+	String SQL 		= "SELECT * FROM notice order by no desc";
 	
 	String FILE		= "getNotice.jsp\t";
 	
