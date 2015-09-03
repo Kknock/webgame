@@ -16,7 +16,9 @@
 	String pw = request.getParameter("pw");
 	
 	String chk_admin = "N";
-	String chk_join = "N"; 
+	String chk_join = "N";
+	
+	int no = -1;
 	
 	byte[] digest = MessageDigest.getInstance("MD5").digest(pw.getBytes());
 
@@ -56,12 +58,13 @@
 			chk = chk+1;
 			chk_admin = rs.getString("chk_admin");
 			chk_join = rs.getString("chk_join");
-			
+			no = rs.getInt("no");
 		}
 		
 		//if(chk>0 && chk_join=="T"){
 		if(chk>0){
 			session.setAttribute("sessionId", id);
+			session.setAttribute("no", no);
 			session.setAttribute("chk_admin", chk_admin);
 			session.setAttribute("chk_join", chk_join);
 			

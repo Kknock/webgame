@@ -93,6 +93,11 @@
                     	else		out.println("<a href=\"#login\" data-toggle=\"modal\">Login</a>");
                     %>
                     </li>
+                    <li>
+                    <% 
+                    	if(isLogin) out.println("<a href=\"#auth\">Auth</a>");
+                    %>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -274,6 +279,39 @@
         </div>
     </section>
 
+	 <!-- Authorization Section -->
+    <section id="auth" <%if(!isLogin){out.print("style=display:none");}%>>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Did you got a key?</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form onsubmit="return handler_auth(key.value)" method="post" id="authForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                            	KEY
+                                <input type="text" class="form-control" placeholder="Do not bruteforce" id="key" name="key" required data-validation-required-message="Please enter valid key.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <center><button type="submit" class="btn btn-success btn-lg">Auth</button></center>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">
@@ -440,6 +478,7 @@
     <script src="dist/js/getprobList.js"></script>
     <script src="dist/js/getProblem.js"></script>
     <script src="dist/js/getNotice.js"></script>
+    <script src="dist/js/handler.js"></script>
 
 </body>
 
