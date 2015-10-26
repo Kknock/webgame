@@ -20,7 +20,6 @@
  	try { 
  		// Check the no is number 
  		prob_type = request.getParameter("prob_type");
- 		System.out.println("prob_type:"+prob_type);
  		session_id = request.getParameter("sessionId");
  	} catch (NumberFormatException e) { 
  		JSONObject jResultObject = new JSONObject(); 
@@ -69,7 +68,6 @@
  				solve_no = rs2.getInt("prob_no");
  				if(solve_no == prob_no){
  					solve_chk="F";
- 					System.out.println("F:"+prob_no);
  					break;
  				}
  			}
