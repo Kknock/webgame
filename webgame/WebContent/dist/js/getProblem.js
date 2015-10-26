@@ -21,8 +21,7 @@ function makeChallengeFormat(title, score, content){
 	
 	var format = "<h2>"+title+" - "+score+"</h2>" +
 			 "<hr class=\"star-primary\">" +
-			 "<p>"+content+"</p>" +
-			 "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><i class=\"fa fa-times\"></i> Close</button>";
+			 "<p>"+content+"</p>";
 	
 	return format;
 }
