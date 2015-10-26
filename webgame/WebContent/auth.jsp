@@ -6,6 +6,8 @@
 <%!
 	String SQL 		= "SELECT * FROM prob WHERE auth_key=?";	
 	String SQL2		= "INSERT INTO solve(solve_time, mem_no, prob_no) VALUES(now(), ?, ?)";
+	String SQL3		= "UPDATE member SET score=((SELECT *FROM (SELECT score FROM member WHERE no=?) as temp) + (SELECT *FROM (SELECT score FROM prob WHERE no=?)as temp)), last_auth=(SELECT solve_time FROM solve WHERE mem_no=? AND prob_no=?) where no=?";
+	// 키 인증시 해당 멤버의 점수 갱신 (sql 버전때문에 더러워요.. 수정 필요합니다)
 	String SQL_LOG	= "INSERT INTO log(time, mem_no, auth) VALUES(now(), ?, ?)";
 	String FILE		= "auth.jsp\t";
 	
@@ -58,6 +60,13 @@
 			pstmt2.setInt(1, mem_no);
 			pstmt2.setInt(2, prob_no);
 			v = pstmt2.executeUpdate();
+			pstmt3 = con.prepareStatement(SQL3);
+			pstmt3.setInt(1, mem_no);
+			pstmt3.setInt(2, prob_no);
+			pstmt3.setInt(3, mem_no);
+			pstmt3.setInt(4, prob_no);
+			pstmt3.setInt(5, mem_no);
+			v = pstmt3.executeUpdate();
 			
 			if(v > 0) {
 				// 정답을 맞춤
