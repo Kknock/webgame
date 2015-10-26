@@ -19,7 +19,8 @@
  	//getprobList.js 에서 보낸 문제 유형과 세션아이디 받기 
  	try { 
  		// Check the no is number 
- 		prob_type = request.getParameter("prob_type"); 
+ 		prob_type = request.getParameter("prob_type");
+ 		System.out.println("prob_type:"+prob_type);
  		session_id = request.getParameter("sessionId");
  	} catch (NumberFormatException e) { 
  		JSONObject jResultObject = new JSONObject(); 
@@ -61,7 +62,6 @@
  		while( rs.next() ) { 
  			JSONObject jObject = new JSONObject();
  			prob_no = rs.getInt("no");
- 			
  			solve_chk="T";
  						
  			// 문제 번호가 푼 문제 번호와 같으면 F
@@ -69,6 +69,7 @@
  				solve_no = rs2.getInt("prob_no");
  				if(solve_no == prob_no){
  					solve_chk="F";
+ 					System.out.println("F:"+prob_no);
  					break;
  				}
  			}
