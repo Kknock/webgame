@@ -24,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SURVIVAL GAME</title>
+    <title>2015 Kknock Survival Game</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -95,7 +95,10 @@
                     </li>
                     <li>
                     <% 
-                    	if(isLogin) out.println("<a href=\"#auth\">Auth</a>");
+                    	if(isLogin){
+                    		if(isAdmin) out.println("<a href=\"#write\">Write</a>");
+                    		else out.println("<a href=\"#auth\">Auth</a>");
+                    	}
                     %>
                     </li>
                 </ul>
@@ -159,7 +162,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="web" sessionId=<%=(String)session.getAttribute("sessionId")%>>
+                        <div class="caption" probtype="web">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -169,7 +172,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="reversing" sessionId=<%=(String)session.getAttribute("sessionId")%>>
+                        <div class="caption" probtype="reversing">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -179,7 +182,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="forensic" sessionId=<%=(String)session.getAttribute("sessionId")%>>
+                        <div class="caption" probtype="forensic">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -189,7 +192,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="network" sessionId=<%=(String)session.getAttribute("sessionId")%>>
+                        <div class="caption" probtype="network">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -199,13 +202,80 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="etc" sessionId=<%=(String)session.getAttribute("sessionId")%>>
+                        <div class="caption" probtype="etc">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
  						<img src="dist/img/challenge/etc.png" class="img-responsive" alt="">
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  <!-- Write Section -->
+    <section id="write" <%if(!isLogin && !isAdmin){out.print("style=display:none");}%>>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Write New Challenges</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form action="addProblem.jsp" method="post" id="writeForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                            	TITLE
+                                <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="title" name="title" required data-validation-required-message="Enter the Title.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                TYPE
+                                <input type="text" class="form-control" placeholder="문제 유형을 선택해주세요." id="type" name="type" required data-validation-required-message="Select a type of the Challenge">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                CONTENTS
+                                <input type="textarea" class="form-control" placeholder="내용을 입력해주세요." id="password" name="pw" required data-validation-required-message="Please Enter the contents">
+                                <p class="help-block text-danger"></p>
+                                FILE
+                                <input type="file" class="form-control" id="file" name="file">
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                SCORE
+                              	<select multiple class="form-control" id="score" name="score">
+                					<option value="100">100</option>
+                    				<option value="200">200</option>
+                    				<option value="300">300</option>
+                    				<option value="400">400</option>
+                    				<option value="500">500</option>
+                				</select>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                AUTH_KEY
+                                <input type="text" class="form-control" placeholder="Key값을 입력해주세요!" id="auth" name="auth" required data-validation-required-message="Please Enter the Key">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <center><button type="submit" class="btn btn-success btn-lg">Add</button></center>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -319,19 +389,31 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>K.knock in Kyonggi University, <br>Suwon, Kyonggi-do</p>
+                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="http://kknock.org" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>notice</h3>
-                        <p>If you have any questions, <br>Leave your message <a href="http://kknock.org">here</a>.</p>
+                        <h3>notice Freelancer</h3>
+                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                     </div>
                 </div>
             </div>
