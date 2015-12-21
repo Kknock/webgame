@@ -23,6 +23,7 @@
 	
 	String chk_admin = "N";
 	
+	
 	// get notices from DB connection
 	Connection con = null;
 	try {
@@ -47,6 +48,8 @@
 	String solve_time = "";
 	
 	JSONObject jResultObject = new JSONObject();
+	
+	
 	// 받아온 키값에 해당하는 문제 번호와 문제 제목, 로그인한 회원 번호를 변수에 저장
 	try {
 		
@@ -112,10 +115,6 @@
 				// 정답을 맞춤
 				jResultObject.put("result", "true");
 				jResultObject.put("msg", "Congraturation! you have gotten " + title);
-			} else {
-				// 이미 풀었었음
-				jResultObject.put("result", "false");
-				jResultObject.put("msg", "Congraturation! but you got " + title + " aleady");
 			}
 			
 		} else {
@@ -126,7 +125,14 @@
 		
 		
 	} catch(SQLException e) {
-		log(FILE + "Query error: " + e.getMessage());
+		// 이미 인증된 키값 인증시 예외처리
+		if(e.getErrorCode()==1062){
+			jResultObject.put("result", "false");
+			jResultObject.put("msg", "Congraturation! but you got " + title + " already");
+			out.print(jResultObject.toJSONString());
+		}
+		else
+			log(FILE + "Query error: " + e.getMessage());
 		return ;
 	}
 	
