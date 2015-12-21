@@ -4,8 +4,8 @@
 <%@ include file="common.jsp" %>
 <%@ page import="java.security.MessageDigest" %>
 <%!
-	String SQL 		= "SELECT no FROM prob order by desc;";	
-	String SQL2		= "INSERT INTO prob(no, title, content, score, auth_key, file) VALUES(?, ?, ?, ?, ?);";
+	String SQL 		= "SELECT no FROM prob order by no desc;";	
+	String SQL2		= "INSERT INTO prob(title, content, auth_key, score, prob_type) VALUES(?, ?, ?, ?, ?);";
 	String FILE		= "addProblem.jsp\t";
 	
 %>
@@ -14,8 +14,9 @@
 	int no = 0;
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
-	int score = Integer.parseInt(request.getParameter("score"));
 	String key = request.getParameter("key");
+	int score = Integer.parseInt(request.getParameter("score"));
+	String prob_type = request.getParameter("type");
 	
 	String chk_admin = "Y";
 	
@@ -39,16 +40,17 @@
 	JSONObject jResultObject = new JSONObject();
 	try {
 		
-		pstmt2 = con.prepareStatement(SQL);
-		rs = pstmt2.executeQuery();
-		no = rs.getInt("no")+1;
-		rs = null;
+		//pstmt2 = con.prepareStatement(SQL);
+		//rs = pstmt2.executeQuery();
+		//no = rs.getInt("no")+1;
+		//rs = null;
 		pstmt = con.prepareStatement(SQL2);
-		pstmt.setInt(1, no);
-		pstmt.setString(2, title);
-		pstmt.setString(3, content);
+		//pstmt.setInt(1, no);
+		pstmt.setString(1, title);
+		pstmt.setString(2, content);
+		pstmt.setString(3, key);
 		pstmt.setInt(4, score);
-		pstmt.setString(5, key);
+		pstmt.setString(5,prob_type);
 		//pstmt.setString(6, file);
 		pstmt.executeUpdate();
 		
@@ -57,7 +59,12 @@
 		log(FILE + "Query error: " + e.getMessage());
 		return ;
 	}
-	
+%>
+	<script>
+		alert("문제 추가 완료");
+		location.href="index.jsp";
+	</script>
+<%	
 	out.print(jResultObject.toJSONString());
 	
 %>

@@ -89,16 +89,16 @@
                     </li>
                     <li>
                     <% 
-                    	if(isLogin) out.println("<a href=\"logout.jsp\">Logout</a>");
-                    	else		out.println("<a href=\"#login\" data-toggle=\"modal\">Login</a>");
-                    %>
-                    </li>
-                    <li>
-                    <% 
                     	if(isLogin){
                     		if(isAdmin) out.println("<a href=\"#write\">Write</a>");
                     		else out.println("<a href=\"#auth\">Auth</a>");
                     	}
+                    %>
+                    </li>
+                    <li>
+                    <% 
+                    	if(isLogin) out.println("<a href=\"logout.jsp\">Logout</a>");                      	
+                    	else		out.println("<a href=\"#login\" data-toggle=\"modal\">Login</a>");
                     %>
                     </li>
                 </ul>
@@ -236,14 +236,20 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 TYPE
-                                <input type="text" class="form-control" placeholder="문제 유형을 선택해주세요." id="type" name="type" required data-validation-required-message="Select a type of the Challenge">
-                                <p class="help-block text-danger"></p>
+                                <select multiple class="form-control" id="type" name="type">
+                					<option value="system">system</option>
+                    				<option value="web">web</option>
+                    				<option value="reversing">reversing</option>
+                    				<option value="network">network</option>
+                    				<option value="forensic">forensic</option>
+                    				<option value="etc">etc</option>
+                				</select>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 CONTENTS
-                                <input type="textarea" class="form-control" placeholder="내용을 입력해주세요." id="password" name="pw" required data-validation-required-message="Please Enter the contents">
+                                <input type="textarea" class="form-control" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents">
                                 <p class="help-block text-danger"></p>
                                 FILE
                                 <input type="file" class="form-control" id="file" name="file">
@@ -264,7 +270,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 AUTH_KEY
-                                <input type="text" class="form-control" placeholder="Key값을 입력해주세요!" id="auth" name="auth" required data-validation-required-message="Please Enter the Key">
+                                <input type="text" class="form-control" placeholder="Key값을 입력해주세요!" id="key" name="key" required data-validation-required-message="Please Enter the Key">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
