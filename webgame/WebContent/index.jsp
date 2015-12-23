@@ -157,7 +157,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="web">
+                        <div class="caption" probtype="web" sessionId=<%=(String)session.getAttribute("sessionId")%>>
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -167,7 +167,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="reversing">
+                        <div class="caption" probtype="reversing" sessionId=<%=(String)session.getAttribute("sessionId")%>>
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="forensic">
+                        <div class="caption" probtype="forensic" sessionId=<%=(String)session.getAttribute("sessionId")%>>
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -187,7 +187,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="network">
+                        <div class="caption" probtype="network" sessionId=<%=(String)session.getAttribute("sessionId")%>>
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
@@ -197,7 +197,7 @@
                 </div>
                 <div class="col-sm-4 challenge-item">
                     <a href="#challengeModal" class="challenge-link" data-toggle="modal">
-                        <div class="caption" probtype="etc">
+                        <div class="caption" probtype="etc" sessionId=<%=(String)session.getAttribute("sessionId")%>>
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
