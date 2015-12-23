@@ -3,7 +3,7 @@
 <%@ page import="org.json.simple.*"%>
 <%@ include file="common.jsp" %>
 <%!
-	String SQL 		= "SELECT name, score FROM member order by score desc limit 10";
+	String SQL 		= "SELECT name, score FROM member where name!='관리자' order by score desc limit 10";
 	
 	String FILE		= "getRank.jsp\t";
 	
