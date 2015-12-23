@@ -58,7 +58,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.jsp">WarGame</a>
+					<a class="navbar-brand" href="../index.jsp">WarGame</a>
 				</div>
 				<!-- /.navbar-header -->
 
@@ -130,7 +130,7 @@
 										<a href="#problem">목록 보기</a>
 									</li>
 									<li>
-										<a href="#problem">문제 추가</a>
+										<a href="#addProb">문제 추가</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->

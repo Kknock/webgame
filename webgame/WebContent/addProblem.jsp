@@ -40,18 +40,12 @@
 	JSONObject jResultObject = new JSONObject();
 	try {
 		
-		//pstmt2 = con.prepareStatement(SQL);
-		//rs = pstmt2.executeQuery();
-		//no = rs.getInt("no")+1;
-		//rs = null;
 		pstmt = con.prepareStatement(SQL2);
-		//pstmt.setInt(1, no);
 		pstmt.setString(1, title);
 		pstmt.setString(2, content);
 		pstmt.setString(3, key);
 		pstmt.setInt(4, score);
 		pstmt.setString(5,prob_type);
-		//pstmt.setString(6, file);
 		pstmt.executeUpdate();
 		
 		
@@ -62,7 +56,7 @@
 %>
 	<script>
 		alert("문제 추가 완료");
-		location.href="index.jsp";
+		location.href="manager-page/index.jsp";
 	</script>
 <%	
 	out.print(jResultObject.toJSONString());
