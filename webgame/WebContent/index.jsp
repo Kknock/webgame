@@ -215,7 +215,7 @@
     </section>
     
   <!-- Write Section -->
-    <section id="write" <%if(!isLogin && !isAdmin){out.print("style=display:none");}%>>
+    <section id="write" <%if(!isAdmin){out.print("style=display:none");}%>>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

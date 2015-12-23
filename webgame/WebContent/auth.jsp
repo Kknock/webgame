@@ -10,9 +10,6 @@
 	String PROB_SCORE	= "SELECT score FROM prob WHERE no=?";
 	String SOLVE_TIME	= "SELECT solve_time FROM solve WHERE mem_no=? AND prob_no=?";
 	String UPDATE		= "UPDATE member SET score=?, last_auth=? where no=?";
-	//String SQL3		= "UPDATE member SET score=((SELECT score FROM member WHERE no=?) + (SELECT score FROM prob WHERE no=?)), last_auth=(SELECT solve_time FROM solve WHERE mem_no=? AND prob_no=?)	where no=?";
-	//String SQL3		= "UPDATE member SET score=((SELECT *FROM (SELECT score FROM member WHERE no=?) as temp) + (SELECT *FROM (SELECT score FROM prob WHERE no=?)as temp)), last_auth=(SELECT *FROM (SELECT solve_time FROM solve WHERE mem_no=? AND prob_no=?)as temp) where no=?";
-	// 키 인증시 해당 멤버의 점수 갱신 (sql 버전때문에 더러워요.. 수정 필요합니다)
 	String SQL_LOG	= "INSERT INTO log(time, mem_no, auth) VALUES(now(), ?, ?)";
 	String FILE		= "auth.jsp\t";
 	
