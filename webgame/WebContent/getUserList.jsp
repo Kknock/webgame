@@ -12,7 +12,7 @@
 	// Connect to database by jdbc
 	Connection con = null;
 	try {
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName(dbDriver);
 		con = DriverManager.getConnection(jdbcURL,dbID,dbPW);
 	} catch(SQLException e) {
 		log(FILE + "Connection error: " + e.getMessage());
