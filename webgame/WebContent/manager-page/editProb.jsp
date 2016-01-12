@@ -1,43 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
 <%
-	// 인증 못하면 광탈하는걸로
-	String sessionId = (String)session.getAttribute("sessionId");
-	String chk_admin = (String)session.getAttribute("chk_admin");
-
-	boolean isLogin = false;
-	boolean isAdmin = false;
-	
-	if( sessionId != null && !sessionId.equals("") ) {
-		isLogin = true;
-	}
-	if( chk_admin != null && chk_admin.equals("T") ) {
-		isAdmin = true;
-	}
-
-	if(!isAdmin){%>
-		<script> 
-		alert("친구~ 여기 구경하고 싶으면 관리자 형아 데려오세요~") 
-		location.href="../index.jsp";
-		</script>		
-<%	}
+	String title = request.getParameter("title");
+	String content = request.getParameter("content");
+	String auth_key = request.getParameter("auth_key");
+	String no	= request.getParameter("no");
 %>
+<html class="no-js" lang="ko">
+<head>
 
+    <meta charset="utf-8">
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	</head>
+<body>
 
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2>Write New Challenges</h2>
+            <h2>Edit Challenges</h2>
             <hr class="star-primary">
         </div>
     </div>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <form action="../addProblem.jsp" method="post" id="writeForm" novalidate>
+            <form action="../editProblem.jsp" method="post" id="writeForm" novalidate>
+            	<input type="hidden" id="no" name="no" value=<%=no %>>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                     	TITLE
-                        <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="title" name="title" required data-validation-required-message="Enter the Title.">
+                        <input type="text" class="form-control" mexlength="30" id="title" name="title" required data-validation-required-message="Enter the Title." value=<%=title%>>
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         CONTENTS
-                        <input type="textarea" class="form-control" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents">
+                        <input type="textarea" class="form-control" mexlength="100" id="content" name="content" required data-validation-required-message="Please Enter the contents" value=<%=content%>>
                         <p class="help-block text-danger"></p>
                         FILE
                         <input type="file" class="form-control" id="file" name="file">
@@ -78,7 +78,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         AUTH_KEY
-                        <input type="text" class="form-control" placeholder="Key값을 입력해주세요!" id="key" name="key" required data-validation-required-message="Please Enter the Key">
+                        <input type="text" class="form-control" mexlength="15" id="key" name="key" required data-validation-required-message="Please Enter the Key" value=<%=auth_key %>>
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -93,3 +93,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

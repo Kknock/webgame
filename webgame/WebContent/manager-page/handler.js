@@ -51,6 +51,10 @@ function hashChange(caller) {
 			case "newUsers":
 				
 		    	$.getScript("../dist/js/contextHandler.js");
+		    	
+			case "probList":
+				$.getScript("../dist/js/contextHandler.js");
+				
 			case "oldUsers":
 				
 				//<!-- DataTables JavaScript -->

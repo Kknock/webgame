@@ -1,6 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
 <%
 	// 인증 못하면 광탈하는걸로
+	String sessionId = (String)session.getAttribute("sessionId");
+	String chk_admin = (String)session.getAttribute("chk_admin");
+
+	boolean isLogin = false;
+	boolean isAdmin = false;
+	
+	if( sessionId != null && !sessionId.equals("") ) {
+		isLogin = true;
+	}
+	if( chk_admin != null && chk_admin.equals("T") ) {
+		isAdmin = true;
+	}
+
+	if(!isAdmin){%>
+		<script> 
+		alert("친구~ 여기 구경하고 싶으면 관리자 형아 데려오세요~") 
+		location.href="../index.jsp";
+		</script>		
+<%	}
 %>
 
 <div class="row">

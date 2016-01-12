@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
 <%
 	// 인증 못하면 광탈하는걸로
 	String sessionId = (String)session.getAttribute("sessionId");
@@ -29,7 +28,7 @@
 		</p> </p>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				회원 목록
+				로그
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
@@ -65,51 +64,52 @@
 <!-- /.row -->
 
 
+<!-- 우클릭시 사용되는 ContextMenu  -->
+<nav id="context-menu" class="context-menu">
+	<ul class="context-menu__items">
+		<li class="context-menu__item">
+			<a href="#" class="context-menu__link" data-action="Edit"><i class="fa  fa-check"></i> Edit</a>
+		</li>
+		<li class="context-menu__item">
+			<a href="#" class="context-menu__link" data-action="Delete"><i class="fa fa-close"></i> Delete</a>
+		</li>
+	</ul>
+</nav>
 
 <script>
 
-	function init(){
-		
-		$.getJSON('../getUserList.jsp', function(data, status) {
-			
-			
-			
+	function init() {
+		$.getJSON('getLog.jsp', function(data, status) {
 			/*
-				서버로부터 유저 데이터를 가져와 dataSet을 작성한다.
-				가져오는 값은 다음과 같다. 회원번호, 아이디, 이름, 해결한 문제 수, 마지막 인증 시간.
+			 *	서버로부터 유저 데이터를 가져와 dataSet을 작성한다.
+			*	가져오는 값은 다음과 같다. 회원번호, 아이디, 이름, 해결한 문제 수, 마지막 인증 시간.
 			*/
 			dataSet = []; 
-			for( idx in data.userList ) {
-				var no 		= data.userList[idx].no;
-				var id 		= data.userList[idx].id;
-				var name	= data.userList[idx].name;
-				var solved	= "undef";
-				var last_auth	= data.userList[idx].last_auth;
-				
-				dataSet.push( [no, id, name, solved, last_auth] );
+			for( idx in data.logList ) {
+				var name	 	= data.logList[idx].name;
+				var auth		= data.logList[idx].auth;
+				var time		= data.logList[idx].time;
+				dataSet.push( [name, auth, time] );
 			}			
 			
 			/*
-				dataSet을 이용해 DataTable을 작성한다.
-				"data" 속성의 값은 [ [td, td, td, ...], [td, td, td, ...], ... ] 형식이다. 
-				"columns" 속성에서는 thead 값과, 그 속성을 결정한다.
+			 *	dataSet을 이용해 DataTable을 작성한다.
+			 *	"data" 속성의 값은 [ [td, td, td, ...], [td, td, td, ...], ... ] 형식이다. 
+			*	"columns" 속성에서는 thead 값과, 그 속성을 결정한다.
 			*/
 			$('#dataTable').dataTable( {
 		        "data": dataSet,
 		        "columns": [
-		            { "title": "#" },
-		            { "title": "아이디" },
 		            { "title": "닉네임" },
-		            { "title": "해결한 문제" },
-		            { "title": "마지막 인증", "class": "center" },
+		            { "title": "인증값"},
+		            { "title": "인증시간"},
 		        ]
-		    } );
+		    });
+	
 			
 		}).fail(function(d, status, error) {
 			console.error("getJSON failed, status: " + status + ", error: "+error)
 			alert('서버와의 연결에 실패하였습니다.');
-		});	
-		
-	}
-
+		});
+	}	
 </script>

@@ -145,6 +145,10 @@
 							<li>
 								<a href="#notice"><i class="fa fa-table fa-fw"></i> 공지사항</a>
 							</li>
+							
+							<li>
+								<a href="#viewLog"><i class="fa fa-table fa-fw"></i> 로그</a>
+							</li>
 
 							<li>
 								<a href="#"><i class="fa fa-list-ul fa-fw"></i> 문제 관리<span class="fa arrow"></span></a>
@@ -154,6 +158,9 @@
 									</li>
 									<li>
 										<a href="#addProb">문제 추가</a>
+									</li>
+									<li>
+										<a href="#probList">문제 수정</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->

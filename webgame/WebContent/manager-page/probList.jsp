@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
 <%
 	// 인증 못하면 광탈하는걸로
 	String sessionId = (String)session.getAttribute("sessionId");
@@ -29,12 +28,7 @@
 		</p> </p>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				다음과 같은 가입 신청이 있습니다.
-				<ul class="nav" style="float:right !important">
-					<li>
-						<a style="padding:0px">모두 수락</a>
-					</li>
-				</ul>
+				문제 리스트
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
@@ -74,10 +68,10 @@
 <nav id="context-menu" class="context-menu">
 	<ul class="context-menu__items">
 		<li class="context-menu__item">
-			<a href="#" class="context-menu__link" data-action="Accept"><i class="fa  fa-check"></i> Accept</a>
+			<a href="#" class="context-menu__link" data-action="Edit"><i class="fa  fa-check"></i> Edit</a>
 		</li>
 		<li class="context-menu__item">
-			<a href="#" class="context-menu__link" data-action="Decline"><i class="fa fa-close"></i> Decline</a>
+			<a href="#" class="context-menu__link" data-action="Delete"><i class="fa fa-close"></i> Delete</a>
 		</li>
 	</ul>
 </nav>
@@ -85,17 +79,20 @@
 <script>
 
 	function init() {
-		$.getJSON('../getJoinRequest.jsp', function(data, status) {
+		$.getJSON('../getProbRequest.jsp', function(data, status) {
 			/*
 			 *	서버로부터 유저 데이터를 가져와 dataSet을 작성한다.
 			*	가져오는 값은 다음과 같다. 회원번호, 아이디, 이름, 해결한 문제 수, 마지막 인증 시간.
 			*/
 			dataSet = []; 
-			for( idx in data.joinList ) {
-				var no 		= data.joinList[idx].no;
-				var id 		= data.joinList[idx].id;
-				var name	= data.joinList[idx].name;
-				dataSet.push( [no, id, name] );
+			for( idx in data.probList ) {
+				var no 			= data.probList[idx].no;
+				var title 		= data.probList[idx].title;
+				var content		= data.probList[idx].content;
+				var prob_type	= data.probList[idx].prob_type;
+				var score		= data.probList[idx].score;
+				var auth_key	= data.probList[idx].auth_key;
+				dataSet.push( [no, title, content, prob_type, score, auth_key] );
 			}			
 			
 			/*
@@ -107,8 +104,11 @@
 		        "data": dataSet,
 		        "columns": [
 		            { "title": "#" },
-		            { "title": "아이디" },
-		            { "title": "닉네임"},
+		            { "title": "제목" },
+		            { "title": "내용"},
+		            { "title": "유형"},
+		            { "title": "점수"},
+		            { "title": "인증키"},
 		        ]
 		    });
 			
@@ -126,46 +126,39 @@
 	}
 	
 	function contextCallback(no, action) {
-			if(action == "Accept") {
-				requestAcceptJoin(no);
+			if(action == "Edit") {
+				requestEditProb(no);
 			} else {
-				alert("you declined.");
+				requestDeleteProb(no);
 			}
 	}
 	
-	
-	function requestAcceptJoin(_no) {		
+	function requestDeleteProb(_no){
 		var requestData = {no:_no};
-		$.getJSON('acceptJoin.jsp', requestData, function(data, status) {
-			if( data.result == "true" ) {
+		$.getJSON('chk_delProb.jsp', requestData, function(data, status){
+			if(data.result == "true"){
 				window.location.reload();
 				return true;
-			} else {
+			} else{
 				alert("요청에 실패하였습니다.");
 			}
-			
-		}).fail(function() {
-			alert("죄송합니다 서버로의 연결에 실패하였습니다.");
+		}).fail(function(){
+			alert("죄송합니다. 서버로의 연결에 실패하였습니다.");
 			return false;
 		});
 		return false;
 	}
 	
-	function requestDeclineJoin(_no) {
+	function requestEditProb(_no){
 		var requestData = {no:_no};
-		$.getJSON('declineJoin.jsp', requestData, function(data, status) {
-			if( data.result == "true" ) {
-				window.location.reload();
-				return true;
-			} else {
-				alert("요청에 실패하였습니다.");
+		$.getJSON('chk_editProb.jsp', requestData, function(data, status){
+			for(idx in data.probList){
+				title = data.probList[idx].title;
+				content = data.probList[idx].content;
+				auth_key = data.probList[idx].auth_key;
 			}
-			
-		}).fail(function() {
-			alert("죄송합니다 서버로의 연결에 실패하였습니다.");
-			return false;
-		});
-		return false;
+		})
+		window.open("editProb.jsp?title="+title+"&content="+content+"&auth_key="+auth_key+"&no="+_no);
 	}
 
 	

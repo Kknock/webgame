@@ -49,7 +49,7 @@
 	
 	// 받아온 키값에 해당하는 문제 번호와 문제 제목, 로그인한 회원 번호를 변수에 저장
 	try {
-		
+				
 		pstmt =  con.prepareStatement(SQL);
 		pstmt.setString(1, key);
 		rs = pstmt.executeQuery();
@@ -61,8 +61,14 @@
 			title = rs.getString("title");
 		}
 		
+		pstmt = con.prepareStatement(SQL_LOG);
+		pstmt.setInt(1,(int)session.getAttribute("no"));
+		pstmt.setString(2,key);
+		v = pstmt.executeUpdate();
+		
 		
 		if(chk > 0) {
+			
 			
 			// 맞는 키값일 경우 solve 테이블에 업데이트
 			PreparedStatement pstmt2;
