@@ -80,7 +80,6 @@
 			} else {
 				%>
 				<script>
-					alert("Login Success.");
 					location.replace("index.jsp");
 				</script>
 			<%
