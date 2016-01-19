@@ -41,7 +41,7 @@
 			<!-- /.panel-body -->
 			<div class="panel-footer">
 				<div class="input-group">
-					<input id="btn-input" type="text" class="form-control input-sm" placeholder="Type new notice here." />
+					<input id="btn-input" type="text" maxlength="100" class="form-control input-sm" placeholder="Type new notice here." />
 					<span class="input-group-btn">
 						<button class="btn btn-warning btn-sm" id="btn-notice">
 							등록

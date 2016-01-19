@@ -28,7 +28,7 @@
 		</p> </p>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				문제 리스트
+				문제 리스트 (문제 우클릭시 수정 및 삭제 가능)
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">

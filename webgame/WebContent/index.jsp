@@ -239,14 +239,14 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                             	ID
-                                <input type="text" class="form-control" placeholder="15자 이내로 입력해주세요." id="id" name="id" required data-validation-required-message="Please enter your ID.">
+                                <input type="text" class="form-control" maxlength="15" placeholder="15자 이내로 입력해주세요." id="id" name="id" required data-validation-required-message="Please enter your ID.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 Name
-                                <input type="text" class="form-control" placeholder="학번+이름      ex)12지혜선" id="name" name="name" required data-validation-required-message="Please enter your Name.">
+                                <input type="text" class="form-control" maxlength="10" placeholder="학번+이름      ex)12지혜선" id="name" name="name" required data-validation-required-message="Please enter your Name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -320,16 +320,17 @@
                         <p>K.knock in Kyonggi University, <br> Suwon, Kyonggi-do</p>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
+                        <!--<h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
                                 <a href="http://kknock.org" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
                             </li>
-                        </ul>
-                    </div>
+                        </ul>-->
+                    </div> 
                     <div class="footer-col col-md-4">
                         <h3>Notice</h3>
-                        <p>If you have any questions, <br> leave your message <a href="http://kknock.org">here</a>.</p>
+                        <p>If you have any questions, <br> leave your message <a href="http://kknock.org">here</a>.
+                        <br><span style="font-size:10pt;">Developed by gyeongjun Cheon, hyaesun Ji, hyewon Lee</span></p>
                     </div>
                 </div>
             </div>
@@ -376,7 +377,7 @@
     
 
 	<!--challenge page modals-->
-    <div class="challenge-modal modal fade" id="challengePage" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="challenge-modal modal fade"  id="challengePage" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">

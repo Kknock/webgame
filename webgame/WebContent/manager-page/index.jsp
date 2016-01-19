@@ -154,13 +154,10 @@
 								<a href="#"><i class="fa fa-list-ul fa-fw"></i> 문제 관리<span class="fa arrow"></span></a>
 								<ul class="nav nav-second-level">
 									<li>
-										<a href="#problem">목록 보기</a>
+										<a href="#probList">목록 보기</a>
 									</li>
 									<li>
 										<a href="#addProb">문제 추가</a>
-									</li>
-									<li>
-										<a href="#probList">문제 수정</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->

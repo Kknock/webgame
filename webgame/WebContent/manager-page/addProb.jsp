@@ -37,7 +37,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                     	TITLE
-                        <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="title" name="title" required data-validation-required-message="Enter the Title.">
+                        <input type="text" class="form-control" maxlength="30" placeholder="제목을 입력해주세요." id="title" name="title" required data-validation-required-message="Enter the Title.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         TYPE
                         <select multiple class="form-control" id="type" name="type">
-        					<option value="system">system</option>
+        					<option selected value="system">system</option>
             				<option value="web">web</option>
             				<option value="reversing">reversing</option>
             				<option value="network">network</option>
@@ -57,17 +57,18 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         CONTENTS
-                        <input type="textarea" class="form-control" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents">
+                        <!-- <input type="textarea" class="form-control" maxlength="100" row="5" cols="50" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents"> -->
+                        <textarea class="form-control" maxlength="100" rows="5" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents" ></textarea>
                         <p class="help-block text-danger"></p>
-                        FILE
-                        <input type="file" class="form-control" id="file" name="file">
+                        <!--FILE
+                        <input type="file" class="form-control" id="file" name="file"> -->
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         SCORE
                       	<select multiple class="form-control" id="score" name="score">
-        					<option value="100">100</option>
+        					<option selected value="100">100</option>
             				<option value="200">200</option>
             				<option value="300">300</option>
             				<option value="400">400</option>
@@ -78,7 +79,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         AUTH_KEY
-                        <input type="text" class="form-control" placeholder="Key값을 입력해주세요!" id="key" name="key" required data-validation-required-message="Please Enter the Key">
+                        <input type="text" class="form-control" maxlength="15" placeholder="Key값을 입력해주세요!" id="key" name="key" required data-validation-required-message="Please Enter the Key">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
