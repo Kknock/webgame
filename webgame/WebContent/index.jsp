@@ -292,7 +292,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                             	KEY
-                                <input type="text" maxlength="50" class="form-control" placeholder="Do not bruteforce" id="key" name="key" required data-validation-required-message="Please enter valid key.">
+                                <input type="text" maxlength="15" class="form-control" placeholder="Do not bruteforce" id="key" name="key" required data-validation-required-message="Please enter valid key.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
