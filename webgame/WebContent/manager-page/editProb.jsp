@@ -58,7 +58,7 @@
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         CONTENTS
                         <!-- <input type="textarea" class="form-control" maxlength="100" row="5" cols="50" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents"> -->
-                        <textarea class="form-control" maxlength="100" rows="5" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents" ></textarea>
+                        <textarea class="form-control" maxlength="100" rows="5" placeholder="내용을 입력해주세요." id="content" name="content" required data-validation-required-message="Please Enter the contents" ><%=content%></textarea>
                         <p class="help-block text-danger"></p>
                         <!--FILE
                         <input type="file" class="form-control" id="file" name="file"> -->
@@ -79,7 +79,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         AUTH_KEY
-                        <input type="text" class="form-control" mexlength="15" id="key" name="key" required data-validation-required-message="Please Enter the Key" value=<%=auth_key %>>
+                        <input type="text" class="form-control" mexlength="15" id="key" name="key" required data-validation-required-message="Please Enter the Key" value='<%=auth_key %>'>
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
