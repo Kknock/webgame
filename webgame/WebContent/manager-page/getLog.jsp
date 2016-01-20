@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
 <%@ page import="org.json.simple.*"%>
 <%@ include file="../common.jsp" %>
 <%!
@@ -29,12 +30,13 @@
 		Statement stmt =  con.createStatement();
 		ResultSet rs = stmt.executeQuery(SQL);
 		JSONArray jArray = new JSONArray();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		while( rs.next() ) {
 			JSONObject jObject = new JSONObject();
 			jObject.put("name", rs.getString("member.name"));
 			jObject.put("auth", rs.getString("log.auth"));
 			//jObject.put("result", rs.getString("result"));
-			jObject.put("time", rs.getTimestamp("log.time").toString());
+			jObject.put("time", sdf.format(rs.getTimestamp("log.time")));
 			jArray.add(jObject);
 		}
 		jResultObject.put("logList", jArray);

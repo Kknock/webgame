@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*"%>
 <%@ page import="org.json.simple.*"%>
 <%@ include file="common.jsp" %>
 <%!
@@ -26,12 +27,10 @@
 		Statement stmt =  con.createStatement();
 		ResultSet rs = stmt.executeQuery(SQL);
 		JSONArray jArray = new JSONArray();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		while( rs.next() ) {
 			JSONObject jObject = new JSONObject();
-			//jObject.put("save_time", rs.getTimestamp("save_time").toString());
-			jObject.put("save_time", rs.getString("save_time"));
-			//System.out.println(rs.getString("save_time"));
-			//System.out.println(rs.getTimestamp("save_time").toString());
+			jObject.put("save_time", sdf.format(rs.getTimestamp("save_time")));
 			jObject.put("content", rs.getString("content"));
 			jArray.add(jObject);
 		}
