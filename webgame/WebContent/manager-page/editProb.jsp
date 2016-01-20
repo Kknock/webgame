@@ -37,7 +37,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                     	TITLE
-                        <input type="text" class="form-control" mexlength="30" id="title" name="title" required data-validation-required-message="Enter the Title." value=<%=title%>>
+                        <input type="text" class="form-control" mexlength="30" id="title" name="title" required data-validation-required-message="Enter the Title." value='<%=title%>'>
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
