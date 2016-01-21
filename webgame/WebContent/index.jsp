@@ -239,14 +239,22 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                             	ID
-                                <input type="text" class="form-control" maxlength="15" placeholder="15자 이내로 입력해주세요." id="id" name="id" required data-validation-required-message="Please enter your ID.">
+                                <input type="text" class="form-control" maxlength="15" placeholder="15자 이내로 입력해주세요. 영어 대소문자, 한글, 숫자, 언더바만 허용됩니다." 
+                                	id="id" name="id" 
+                                	pattern="[a-zA-Z가-힣_]+"
+                                	data-validation-pattern-message="영어 대소문자, 한글, 숫자, '_' 만 허용됩니다."
+                                	required data-validation-required-message="Please enter your ID.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 Name
-                                <input type="text" class="form-control" maxlength="10" placeholder="학번+이름      ex)12지혜선" id="name" name="name" required data-validation-required-message="Please enter your Name.">
+                                <input type="text" class="form-control" maxlength="10" placeholder="학번+이름      ex)12지혜선" 
+                                id="name" name="name" 
+                                pattern="[a-zA-Z가-힣_]+"
+                                data-validation-pattern-message="영어 대소문자, 한글, 숫자, '_' 만 허용됩니다."
+                                required data-validation-required-message="Please enter your Name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -455,7 +463,8 @@
 
     <!-- Contact Form JavaScript -->
     <script src="dist/js/jqBootstrapValidation.js"></script>
-
+	<script src="dist/js/contactValidationChecker.js"></script>
+	
 	<script src="bower_components/raphael/raphael-min.js"></script>
 	<script src="bower_components/morrisjs/morris.min.js"></script>
 
@@ -465,7 +474,6 @@
     <script src="dist/js/getProblem.js"></script>
     <script src="dist/js/getNotice.js"></script>
     <script src="dist/js/handler.js"></script>
-
 </body>
 
 </html>
