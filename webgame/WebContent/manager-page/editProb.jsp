@@ -68,6 +68,7 @@
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         SCORE
                       	<select multiple class="form-control" id="score" name="score">
+                      		<option value="50">50</option>
         					<option selected value="100">100</option>
             				<option value="200">200</option>
             				<option value="300">300</option>
