@@ -27,9 +27,12 @@ $('.caption').click(function(e){
 			}
 			// 풀지 못한 문제
 			else{
-				format += "<div class=\"col-sm-4 challenge-item\">" +
-				"<a href=\"#challengePage\" class=\"challenge-link2\" data-toggle=\"modal\">" +
-				"<img src=\"dist/img/"+probtype+"/"+title+".png\" onmouseover=\"this.src=\'dist/img/"+score+".png\'\" onmouseout=\"this.src=\'dist/img/"+probtype+"/"+title+".png\'\" class=\"prob\" probNum=\""+no+"\"/> "+
+				format += "<div class=\"col-sm-4 challenge-item\">" + 
+				"<a href=\"#challengePage\" class=\"challenge-link2\" data-toggle=\"modal\">" + 
+				"<div> " + title +
+				"</div>" +
+				"<img src=\'dist/img/"+score+".png\'\" class=\"prob\" probNum=\""+no+"\"/>"+
+				//"<img src=\"dist/img/"+probtype+"/"+title+".png\" onmouseover=\"this.src=\'dist/img/"+score+".png\'\" onmouseout=\"this.src=\'dist/img/"+probtype+"/"+title+".png\'\" class=\"prob\" probNum=\""+no+"\"/> "+
 				"</a> </div>";
 			}
 		}

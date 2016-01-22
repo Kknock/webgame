@@ -3,6 +3,8 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ 
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 body {
     overflow-x: hidden;
@@ -248,6 +250,37 @@ section.success a.active {
 #challenge .challenge-item .challenge-link2 img {
     width: 100%;
     height: auto;
+}
+
+#challengeModal .challenge-item {
+	align-items: center;
+}
+
+#challengeModal .challenge-item img {
+	visibility: hidden;	
+}
+
+#challengeModal .challenge-item div {
+	position: absolute;
+		
+	width: 220px;
+	height: 158.883px;
+	line-height: 750%;
+	
+	font-family: "Nanum Gothic", sans-serif;
+	color: black;
+	font-size: 18px;
+	
+	border: 1px solid grey;
+	background-color: white; 
+}
+
+#challengeModal .challenge-item:hover img {
+	visibility: visible;
+}
+
+#challengeModal .challenge-item:hover div {
+	visibility: hidden;
 }
 
 #challenge .challenge-item .challenge-link .caption .caption-content h3,
