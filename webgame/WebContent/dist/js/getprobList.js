@@ -20,14 +20,14 @@ $('.caption').click(function(e){
 			
 			// 이미 푼 문제
 			if(solve_chk=="F"){
-				format += "<div class=\"col-sm-4 challenge-item\">" +
+				format += "<div class=\"col-sm-4 challenge-item solved\">" +
 				"<a class=\"challenge-link2\" data-toggle=\"modal\">"+
 				"<img src=\"dist/img/solved.png\"> "+
 				"</a> </div>";		
 			}
 			// 풀지 못한 문제
 			else{
-				format += "<div class=\"col-sm-4 challenge-item\">" + 
+				format += "<div class=\"col-sm-4 challenge-item unsolved\">" + 
 				"<a href=\"#challengePage\" class=\"challenge-link2\" data-toggle=\"modal\">" + 
 				"<div> " + title +
 				"</div>" +

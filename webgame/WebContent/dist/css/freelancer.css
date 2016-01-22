@@ -256,30 +256,34 @@ section.success a.active {
 	align-items: center;
 }
 
-#challengeModal .challenge-item img {
+#challengeModal .unsolved img {
+	border: 4px solid black;
+	border-radius: 36px;
+	overflow:hidden;
 	visibility: hidden;	
 }
 
-#challengeModal .challenge-item div {
+#challengeModal .unsolved div {
 	position: absolute;
 		
 	width: 220px;
 	height: 158.883px;
-	line-height: 750%;
+	line-height: 700%;
+	font-family: Montserrat,"Helvetica Neue","Nanum Gothic",Helvetica,Arial,sans-serif;
+	color: #333;
+	font-size: 1.5em; /* If you change this then you must change line-height percentage.*/
 	
-	font-family: "Nanum Gothic", sans-serif;
-	color: black;
-	font-size: 18px;
-	
-	border: 1px solid grey;
-	background-color: white; 
+	border: 1px solid #18BC9C;
+	border-radius: 36px;
+	background: none repeat scroll 0% 0%;
+	/*background-color: white;*/ 
 }
 
-#challengeModal .challenge-item:hover img {
+#challengeModal .unsolved:hover img {
 	visibility: visible;
 }
 
-#challengeModal .challenge-item:hover div {
+#challengeModal .unsolved:hover div {
 	visibility: hidden;
 }
 
