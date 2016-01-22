@@ -19,9 +19,9 @@ $(document).on("click",".prob",function(){
 
 function makeChallengeFormat(title, score, content){
 	
-	var format = "<h2>"+title+" - "+score+"</h2>" +
+	var format = "<h2><center>"+title+" - "+score+"</center></h2>" +
 			 "<hr class=\"star-primary\">" +
-			 "<p>"+content+"</p>";
+			 "<p><center>"+content+"</center></p>";
 	
 	return format;
 }

@@ -376,6 +376,7 @@
 						<div class="col-lg-8 col-lg-offset-2">
 							<div class="modal-body" id="challenge-list">
 							</div>
+							<button type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
 						</div>
 					</div>
 				</div>
@@ -384,71 +385,54 @@
 	</div>
     
 
-	<!--challenge page modals-->
-    <div class="challenge-modal modal fade"  id="challengePage" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container" >
-            	 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body" id="challengeBody">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--challenge page modals-->
+    <div class="modal fade bs-example-modal-lg" id="challengePage" tabindex="-1" role="dialog" aria-hidden="true">
+   	 <div class="modal-dialog modal-lg">
+			<div class="modal-content" style="height:700px;">
+	            <div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        				<h4 class="modal-title">Challenge</h4>
+      			</div>
+            	<div class="container" >
+            	 	<div class="row">
+	                    <div class="col-lg-5 col-lg-offset-2">
+                        	<div class="modal-body" id="challengeBody">
+                        	</div>
+                    	</div>
+                	</div>
+           	</div>
+        	</div>
         </div>
     </div>
     
-    <!--Login modals-->
-	<div class="login-modal modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                	<div class="modal-body">
-                		<h2> Login </h2>
-                		<hr class="star-primary">
-                    <form action = "login_chk.jsp" method="post" id="loginForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>ID</label>
-                                <input type="text" class="form-control" placeholder="id" id="id" name="id" required data-validation-required-message="Please enter your ID.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Password</label>
-                                <input type="password" class="form-control" placeholder="password" id="password" name="pw" required data-validation-required-message="Please enter your Password.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
-                                <button type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </form>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
+   <!--Login modals-->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        				<h4 class="modal-title">Login</h4>
+      			</div>
+      		<form action = "login_chk.jsp" method="post" id="loginForm" novalidate>
+      			<div class="modal-body">
+        			<label>ID</label>
+            			<input type="text" class="form-control" placeholder="id" id="id" name="id" required data-validation-required-message="Please enter your ID.">
+      				<label>Password</label>
+            			<input type="password" class="form-control" placeholder="password" id="password" name="pw" required data-validation-required-message="Please enter your Password.">
+      			</div>
+      			<div class="modal-footer">
+        			<div id="success"></div>
+        				<div class="row">
+            				<div class="form-group col-xs-12">
+                				<button type="submit" class="btn btn-success btn-lg">Send</button>
+                				<button type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            				</div>
+            			</div>
+      			</div>
+      		</form>
+    		</div><!-- /.modal-content -->
+  		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
