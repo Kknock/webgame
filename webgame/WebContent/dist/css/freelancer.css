@@ -268,10 +268,13 @@ section.success a.active {
 		
 	width: 220px;
 	height: 158.883px;
-	line-height: 700%;
+	padding: 50px 0;
+	
 	font-family: Montserrat,"Helvetica Neue","Nanum Gothic",Helvetica,Arial,sans-serif;
-	color: #333;
 	font-size: 1.5em; /* If you change this then you must change line-height percentage.*/
+	color: #333; /*Font color*/
+	
+	word-break: break-all; /*Auto line feed*/
 	
 	border: 1px solid #18BC9C;
 	border-radius: 36px;
