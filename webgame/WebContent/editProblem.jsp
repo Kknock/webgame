@@ -6,7 +6,7 @@
 <%!
 	//String SQL 		= "SELECT no FROM prob order by no desc;";	
 	//String SQL2		= "INSERT INTO prob(title, content, auth_key, score, prob_type) VALUES(?, ?, ?, ?, ?);";
-	String SQL2		= "UPDATE prob SET title=?, content=?, auth_key=?, score=?, prob_type=? WHERE no=?";
+	String SQL		= "UPDATE prob SET title=?, content=?, auth_key=?, score=?, prob_type=? WHERE no=?";
 	String FILE		= "addProblem.jsp\t";
 	
 %>
@@ -18,8 +18,6 @@
 	String key = request.getParameter("key");
 	int score = Integer.parseInt(request.getParameter("score"));
 	String prob_type = request.getParameter("type");
-	
-	String chk_admin = "Y";
 	
 	// get notices from DB connection
 	Connection con = null;
@@ -34,13 +32,11 @@
 	PreparedStatement pstmt = null;
 	PreparedStatement pstmt2 = null;
 	ResultSet rs = null;
-	int chk = 0;
-	int v;
-	
 	JSONObject jResultObject = new JSONObject();
+	
 	try {
 		
-		pstmt = con.prepareStatement(SQL2);
+		pstmt = con.prepareStatement(SQL);
 		pstmt.setString(1, title);
 		pstmt.setString(2, content);
 		pstmt.setString(3, key);
