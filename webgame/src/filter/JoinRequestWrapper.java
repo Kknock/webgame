@@ -57,10 +57,6 @@ public class JoinRequestWrapper extends HttpServletRequestWrapper {
 		}
 		return value;
 	}
- 
-	private String cleanXSS(String v) {
-		return v;
-	}
 	
 	public boolean check_malice(String value) {
 		//You'll need to remove the spaces from the html entities below
