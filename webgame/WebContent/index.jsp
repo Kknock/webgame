@@ -241,9 +241,10 @@
                             	ID
                                 <input type="text" class="form-control" maxlength="15" placeholder="15자 이내로 입력해주세요. 영어 대소문자, 한글, 숫자, 언더바만 허용됩니다." 
                                 	id="id" name="id" 
-                                	pattern="[a-zA-Z가-힣_]+"
+                                	pattern="[a-zA-Z0-9가-힣_]+"
                                 	data-validation-pattern-message="영어 대소문자, 한글, 숫자, '_' 만 허용됩니다."
                                 	required data-validation-required-message="Please enter your ID.">
+                                	<span id="duplicateId" class="form-control alert hidden">중복된 아이디입니다.</span>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -252,9 +253,10 @@
                                 Name
                                 <input type="text" class="form-control" maxlength="10" placeholder="학번+이름      ex)12지혜선" 
                                 id="name" name="name" 
-                                pattern="[a-zA-Z가-힣_]+"
+                                pattern="[a-zA-Z0-9가-힣_]+"
                                 data-validation-pattern-message="영어 대소문자, 한글, 숫자, '_' 만 허용됩니다."
                                 required data-validation-required-message="Please enter your Name.">
+                                <span id="duplicateName" class="form-control alert hidden">중복된 이름입니다.</span>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
