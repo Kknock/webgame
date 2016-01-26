@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="org.json.simple.*"%>
-<%@ include file="common.jsp" %>
+<%@ include file="../common.jsp" %>
 <%@ page import="java.security.MessageDigest" %>
 <%!
 	//String SQL 		= "SELECT no FROM prob order by no desc;";	
@@ -89,7 +89,7 @@
 		%>
 			<script>
 			alert("문제 수정 완료");
-			location.href="manager-page/index.jsp#probList";
+			location.href="index.jsp#probList";
 			</script>
 		<%
 		}
