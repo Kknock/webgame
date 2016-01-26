@@ -40,9 +40,13 @@ public class XSSEscapeRequestWrapper extends HttpServletRequestWrapper {
  
 	private String cleanXSS(String value) {
 		//You'll need to remove the spaces from the html entities below
-		value = value.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+		value = value.replaceAll("<s", "&lt;s").replaceAll("t>", "t&gt;");
+		value = value.replaceAll("<S", "&lt;s").replaceAll("T>", "t&gt;");
+		value = value.replaceAll("</s", "&lt;s").replaceAll("</S", "&lt;S");
+		
 		//value = value.replaceAll("\\(", "& #40;").replaceAll("\\)", "& #41;");
 		//value = value.replaceAll("'", "& #39;");
+		value = value.replaceAll("\n", "</br>");
 		value = value.replaceAll("eval\\((.*)\\)", "");
 		//value = value.replaceAll("[\\\"\\\'][\\s]*javascript:(.*)[\\\"\\\']", "\"\"");
 		//value = value.replaceAll("script", "");
